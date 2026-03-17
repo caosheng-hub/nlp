@@ -1,19 +1,27 @@
-# Transformer 论文复现 | 《Attention Is All You Need》
-🔥 基于PyTorch从零实现Google 2017年经典论文《Attention Is All You Need》，完整拆解并复现Transformer核心架构，无高层API封装，逐模块对应论文公式与设计逻辑，深入理解大模型基础架构核心原理。
+# Transformer From Scratch (PyTorch)
 
-## 📑 论文背景
-《Attention Is All You Need》是深度学习领域里程碑式论文，首次提出纯注意力机制的Transformer架构，彻底替代了RNN类序列模型，成为后续BERT、GPT等所有大语言模型的基础架构。
-本项目严格遵循论文设计，从零实现完整的Encoder-Decoder架构，拆解每一个核心模块，做到公式-代码-逻辑一一对应。
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.10+-ee4c2c.svg)](https://pytorch.org/)
 
-## ✨ 核心实现亮点
-1. **全链路从零实现**：无transformers等高层API调用，从词嵌入、位置编码，到多头注意力、编码器/解码器、层归一化、残差连接，全模块手动实现，完全吃透底层逻辑
-2. **严格对齐论文设计**：
-   - 实现论文3.2节 **Scaled Dot-Product Attention** 与 **Multi-Head Attention**
-   - 实现论文3.3节 **Encoder-Decoder** 完整堆叠架构（6层Encoder + 6层Decoder）
-   - 实现论文3.4节 **Feed-Forward Networks** 前馈全连接层
-   - 实现论文3.5节 **Positional Encoding** 正弦余弦位置编码
-   - 完整实现Padding Mask与Sequence Mask（因果掩码）双掩码机制
-3. **模块化工程设计**：代码高度解耦，每个模块独立封装，可单独调用、测试、二次修改，符合工业界代码规范
-4. **开箱即用**：配套完整的单模块测试与全链路测试脚本，一键运行即可验证模型前向传播逻辑
+本项目严格遵循 Google 2017 年论文 [《Attention Is All You Need》](https://arxiv.org/abs/1706.03762)，**从零实现**完整的 Transformer 模型（编码器-解码器架构）。**无任何高层封装**（如 HuggingFace Transformers），所有模块均手动构建，并与论文公式一一对应。旨在深入理解大语言模型的核心基础。
 
-## 📁 仓库结构
+## ✨ 核心亮点
+
+- **全链路手写**：从词嵌入、位置编码到多头注意力、掩码机制、前馈网络、层归一化、残差连接，全部手动实现，无黑盒。
+- **严格对齐论文**：
+  - ✅ Scaled Dot-Product Attention & Multi-Head Attention（论文 3.2 节）
+  - ✅ 6 层 Encoder + 6 层 Decoder 堆叠（论文 3.3 节）
+  - ✅ Position-wise Feed-Forward Networks（论文 3.4 节）
+  - ✅ 正弦余弦位置编码（论文 3.5 节）
+  - ✅ Padding Mask 与 Sequence Mask（因果掩码）双机制
+- **模块化设计**：每个组件独立封装（`EncoderLayer`、`DecoderLayer`、`MultiHeadAttention` 等），易于复用和二次开发。
+- **开箱可测**：每个模块都附有测试函数（如 `test_encoder()`、`test_decoder()`），可直接运行验证。
+
+## 🚀 快速开始
+
+### 环境配置
+推荐使用 conda 创建虚拟环境：
+```bash
+conda create -n transformer python=3.8
+conda activate transformer
+pip install torch numpy matplotlib
