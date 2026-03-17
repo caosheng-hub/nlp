@@ -1,0 +1,7 @@
+## 🛠️ 环境依赖
+- Python >= 3.8
+- PyTorch >= 1.8.0
+- NumPy >= 1.21.0
+一键安装依赖：
+```bash
+pip install -r requirements.txt
