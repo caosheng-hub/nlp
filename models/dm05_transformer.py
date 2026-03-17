@@ -1,4 +1,4 @@
-from dm04_generator import *
+from .dm04_generator import *
 # 定义EncoderDecoder类
 class EncoderDecoder(nn.Module):
     def __init__(self,encoder,decoder,source_embed,target_embed,generator):
