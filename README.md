@@ -20,13 +20,9 @@
 
 ## 🚀 快速开始
 
-### 环境配置
+### 环境配置 
 推荐使用 conda 创建虚拟环境：
 ```bash
 conda create -n transformer python=3.8
 conda activate transformer
 pip install torch numpy matplotlib
-### 克隆仓库
-```bash
-git clone https://github.com/caosheng-hub/attention-is-all-you-need-pytorch.git
-cd attention-is-all-you-need-pytorch
