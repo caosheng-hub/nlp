@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import torch
-from dm01_input import Embeddings, PositionEncoding
-from dm02_encoder import MutiHeadAttention, FeedForward, EncoderLayer, Encoder
-from dm03_decoder import DecoderLayer, Decoder
-from dm04_generator import Generator
-from dm05_transformer import EncoderDecoder
+from models.dm01_input import Embeddings, PositionEncoding
+from models.dm02_encoder import MutiHeadAttention, FeedForward, EncoderLayer, Encoder
+from models.dm03_decoder import DecoderLayer, Decoder
+from models.dm04_generator import Generator
+from models.dm05_transformer import EncoderDecoder
 
 def main():
     print("="*50)
