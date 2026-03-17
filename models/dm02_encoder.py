@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import torch.nn.functional as F
-from .dm01_input import *
+from dm01_input import *
 import copy
 # todo 1:生成一个下三角矩阵
 def sub_mask(size):
