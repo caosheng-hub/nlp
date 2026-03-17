@@ -6,9 +6,9 @@ import torch.nn as nn
 import numpy as np
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
-from dm01_input import *
-from dm02_encoder import *
-from dm03_decoder import *
+from .dm01_input import *
+from .dm02_encoder import *
+from .dm03_decoder import *
 class Generator(nn.Module):
     def __init__(self,d_model,vocab_size):
         super().__init__()
